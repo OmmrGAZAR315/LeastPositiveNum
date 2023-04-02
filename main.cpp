@@ -4,12 +4,10 @@
 
 int solution(std::vector<int> &v) {
     sort(v.begin(), v.end());
-    bool bb= true;
+    if (v[0] > 1)
+        return 1;
     for (int i = 0; i < v.size(); i++) {
         if (v[i] >= 1) {
-            if (bb&&v[i] > 1)
-                return 1;
-            else bb=false;
             if (v[i] != v[i + 1] && v[i] + 1 != v[i + 1])
                 return v[i] + 1;
         }
